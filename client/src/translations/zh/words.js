@@ -40,7 +40,7 @@ var word_bank = {
     sign_in: "登录",
     sign_up: "注册",
     signin_error: "用户不存在",
-    signup_error: "注册时出现错误。请将此错误发送至 " + admin_email + " 或稍后再试。",
+    signup_error: "登录失败。请检查您的电子邮件和密码，或通过 " + admin_email + " 与我们联系。",
     email_yes_user_no_error: "该电子邮件已被使用",
     email_yes_user_yes_error: "用户已存在",
     user: "用户名",

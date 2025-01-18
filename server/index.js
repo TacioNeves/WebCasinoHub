@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 const dotenv = require('dotenv')
 const path = require('path')
-var NODE_ENV = process.env.NODE_ENV.trim() 
+var NODE_ENV = process.env.NODE_ENV
 dotenv.config({
   path: path.resolve(__dirname, `.env.${NODE_ENV}`)
 })
@@ -137,6 +137,7 @@ io.on('connection', function(socket) {
         users_array = result
         let uuid = crypto.randomBytes(20).toString('hex')
         let device = get_device(socket.request.headers) // 0 = computer, 1 = mobile, 2 = other
+        let randomToken = crypto.randomBytes(20).toString('hex')
   
         //emit
         let obj = {
@@ -146,7 +147,8 @@ io.on('connection', function(socket) {
           account_type: account_type, 
           money: user_money, 
           device: device,
-          profile_pic: profile_pic
+          profile_pic: profile_pic,
+          randomToken:randomToken
         }
         try{
           io.to(socket.id).emit('signup_read', {exists: false, obj: obj})
@@ -167,8 +169,9 @@ io.on('connection', function(socket) {
           let pass = JSON.stringify(encrypt(data.pass))
 
           //insert new user in users and login tables
-          database_config.sql = "INSERT INTO casino_user (uuid, user, email, pass, account_type, money, signup) VALUES (?, ?, ?, ?, ?, ?, ?)"
-					let payload = [uuid, data.user, data.email, pass, account_type, user_money, timestamp] 
+          database_config.sql = "INSERT INTO casino_user (uuid, user, email, pass, account_type, money, signup, phone, verification_token) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+					let payload = [uuid, data.user, data.email, pass, account_type, user_money, timestamp, '00000000000000',randomToken] 
+          
           database_config.name = "db03"
           database(database_config, payload).then(function(result){
 						let insertId = result.insertId

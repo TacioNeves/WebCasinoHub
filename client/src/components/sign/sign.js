@@ -158,7 +158,7 @@ function Sign(props) {
             open: true,
             template: template,
             title: "error",
-            data: translate({lang: props.lang, error})
+            data: translate({lang: props.lang, info: error})
         }                
         dispatch(changePopup(payload))
     }

@@ -40,7 +40,7 @@ var word_bank = {
     sign_in: "Sign in",
     sign_up: "Sign up",
     signin_error: "The user doesn't exist",
-    signup_error: "There has been an error signing you up. Please email this error to " + admin_email + " or try again later.",
+    signup_error: "Unable to log in. Check your email and password, or contact us at " + admin_email + ".",
     email_yes_user_no_error: "This email has already been used",
     email_yes_user_yes_error: "The user already exists",
     user: "User",

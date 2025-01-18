@@ -40,7 +40,7 @@ var word_bank = {
     sign_in: "Se connecter",
     sign_up: "S'inscrire",
     signin_error: "L'utilisateur n'existe pas",
-    signup_error: "Il y a eu une erreur lors de votre inscription. Veuillez envoyer cette erreur à " + admin_email + " ou réessayez plus tard.",
+    signup_error: "Échec de la connexion. Veuillez vérifier votre e-mail et votre mot de passe, ou contactez-nous à " + admin_email + ".",
     email_yes_user_no_error: "Cet email a déjà été utilisé",
     email_yes_user_yes_error: "L'utilisateur existe déjà",
     user: "Utilisateur",

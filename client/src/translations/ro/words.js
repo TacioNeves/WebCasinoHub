@@ -40,7 +40,7 @@ var word_bank = {
     sign_in: "Logare",
     sign_up: "Înregistrare",
     signin_error: "User-ul nu există",
-    signup_error: "A apărut o eroare la înregistrare. Vă rugăm să trimiteți această eroare la " + admin_email + " sau încercați din nou mai târziu.",
+    signup_error: "Autentificare eșuată. Verificați-vă emailul și parola, sau contactați-ne la " + admin_email + ".",
     email_yes_user_no_error: "Acest email a fost deja folosit",
     email_yes_user_yes_error: "User-ul există deja",
     user: "Utilizator",
