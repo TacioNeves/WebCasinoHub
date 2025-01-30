@@ -25,6 +25,8 @@ var paypalPayment = require("./payments/paypalPayment")
 app.use(paypalPayment) 
 var cryptoPayment = require("./payments/cryptoPayment")
 app.use(cryptoPayment) 
+var balance = require("./balance/balance")
+app.use(balance);
 
 const { encrypt, decrypt } = require('./utils/crypto')
 const { get_device, get_extra_data, check_streak } = require("./utils/other")
